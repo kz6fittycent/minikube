@@ -1,0 +1,21 @@
+name: minikube-kz6fittycent # check to see if it's available
+version: '1.0+git' # check versioning
+summary: Run Kubernetes on your local machine # 79 char long summary
+description: |
+  Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs
+
+apps:
+  minikube-kz6fittycent:
+    command: minikube
+    plugs:
+      - home
+      - network
+      - network-bind
+     
+parts: 
+  my-part:
+    source-type: git
+    plugin: make
+    source: https://github.com/kz6fittycent/minikube
