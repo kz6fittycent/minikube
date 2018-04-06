@@ -19,3 +19,6 @@ parts:
     source-type: git
     plugin: make
     source: https://github.com/kz6fittycent/minikube
+    
+    build-packages:
+      - golang
